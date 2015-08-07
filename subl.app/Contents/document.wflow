@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>409.2</string>
+	<key>AMApplicationVersion</key>
+	<string>2.5</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>執行 AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}
+  tell application "Finder"
+    set dir_path to quoted form of (POSIX path of (folder of the front window as alias))
+  end tell
+  CD_to_SUBL(dir_path)
+end run
+
+on CD_to_SUBL(theDir)
+  tell application "iTerm"
+    make new terminal
+    tell the current terminal
+        activate current session
+        launch session "Default Session"
+        tell the last session
+            write text "cd " &amp; theDir &amp; ";clear;"
+        end tell
+        tell the last session
+            write text "subl .;clear;"
+        end tell
+    end tell
+  end tell
+end CD_to_SUBL</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>4B60AFB3-C660-4C82-BA4D-EC8EF0F763F2</string>
+				<key>Keywords</key>
+				<array>
+					<string>執行</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>8B054243-763D-49C2-8608-E5D5B6CE85E4</string>
+				<key>UUID</key>
+				<string>7E4E4E43-2DA0-458E-9573-AAF8CFEC92BF</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:497.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.application</string>
+	</dict>
+</dict>
+</plist>
