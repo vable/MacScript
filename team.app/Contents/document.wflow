@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set diskName to "Sunsys"		if diskName is not in (do shell script "/bin/ls /Volumes") then		tell application "Finder"			try				mount volume "smb://192.168.6.200/Sunsys"				delay 1			end try		end tell	end if	do shell script "open /Volumes/" &amp; diskName &amp; "/RD/FlashTeam/"	end run</string>
+					<string>on run {input, parameters}	set diskName to "Sunsys"		if diskName is not in (do shell script "/bin/ls /Volumes") then		tell application "Finder"			try				mount volume "smb://xxx.yyy.xxx.ccc"				delay 1			end try		end tell	end if	do shell script "open /Volumes/" &amp; diskName &amp; "/aa/bb/"	end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,12 +102,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:577.000000</string>
+				<string>529.000000:539.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
