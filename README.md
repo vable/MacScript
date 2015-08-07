@@ -1,0 +1,2 @@
+# MacScript
+bash / automator
