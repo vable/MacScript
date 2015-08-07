@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	try		set dialogResult to display alert ¬			"Open which folder?" buttons {"Cancel", ".5.13", ".6.200"} ¬			default button ".5.13" cancel button "Cancel"	on error number -128		set userCanceled to true	end try	if button returned of dialogResult is ".5.13" then		set diskName to "CasinoTeam"		set mountName to "smb://192.168.5.13/CasinoTeam"	else if button returned of dialogResult is ".6.200" then		set diskName to "UI_Share"		set mountName to "smb://192.168.6.200/UI_Share"	end if	if diskName is not in (do shell script "/bin/ls /Volumes") then		tell application "Finder"			try				mount volume mountName				delay 1			end try		end tell	end if	do shell script "open /Volumes/" &amp; diskName	return mountNameend run</string>
+					<string>on run {input, parameters}		set dialogResult to display alert ¬		"Open which folder?" buttons {"Cancel", ".a.b", ".c.d"} ¬		default button ".a.b" cancel button "Cancel"	set userSelect to false	if button returned of dialogResult is ".a.b" then		set diskName to "cc"		set mountName to "smb://xxx.yyy.zzz/cc"		set userSelect to true	else if button returned of dialogResult is ".c.d" then		set diskName to "bb"		set mountName to "smb://xxx.yyy.zzz/bb"		set userSelect to true	end if		(*display notification "test=&gt; " &amp; diskName*)		if diskName is not in (do shell script "/bin/ls /Volumes") then		tell application "Finder"			try				mount volume mountName				delay 1			end try		end tell	end if	if userSelect then do shell script "open /Volumes/" &amp; diskNameend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -75,8 +75,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>980580B4-49C1-4442-A0CC-7CD44067E3C4</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>996A4401-CBC4-4A52-9D0C-4C5732408C90</string>
 				<key>UnlocalizedApplications</key>
@@ -104,12 +102,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:459.000000</string>
+				<string>719.500000:553.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
